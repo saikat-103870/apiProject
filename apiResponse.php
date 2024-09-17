@@ -26,9 +26,9 @@ if ($dataArray === NULL) {
 }
 
 // Print data for debugging (optional)
-echo "<pre>";
+/*echo "<pre>";
 print_r($dataArray);
-echo "</pre>";
+echo "</pre>";*/
 
 // Step 2: Further process the data
 if (isset($dataArray['data']) && is_array($dataArray['data'])) {
@@ -58,10 +58,10 @@ if (isset($dataArray['data']) && is_array($dataArray['data'])) {
             die("Connection failed: " . mysqli_connect_error());
         }
 
-        $sql = "INSERT INTO match (name, matchType, status)
+        $sql = "INSERT INTO matches (name, matchType, status)
                 VALUES ('$match_id', '$match_name', '$description')";
   echo $sql;
-  exit();
+  //exit();
         if (mysqli_query($conn, $sql)) {
             echo "New record created successfully";
         } else {
